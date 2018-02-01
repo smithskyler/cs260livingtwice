@@ -3,39 +3,46 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Skyler Smith Photography</title>
+        <title>Living Twice</title>
         <meta name="description" content="About me.">
         <link rel="stylesheet" href="/style.css">
     </head>
     <body>
-        
-        <h1>Skyler Smith Photography</h1>
-        <div class="navBar">
-            <nav>
-                <ul>
-                    <li><a href="/index.html">WELCOME</a></li>
-                    <li><a href="/pages/about.html">ABOUT</a></li>
-                    <li><a href="/pages/portfolio.html">PORTFOLIO</a></li>
-                    <li><a href="/pages/reviews.html">REVIEWS</a></li>
-                    <li><a href="/pages/contact.html" class="active">CONTACT</a></li>
-                </ul>
-            </nav>
-        </div>
-                
-        <h2 class="center">Contact</h2>
-        <form class="center" action="https://formspree.io/smithskylera@gmail.com" method="POST">
-            <p>Name</p>
-            <input type="text" name="name">
-            <p>Email</p>
-            <input type="email" name="_replyto">
-            <p>Message</p>
-            <textarea type="text" name="content"></textarea>
+        <div class="container">
+            <div class="header">
+                <h1>Living Twice</h1>
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="/index.html">Feature</a></li>
+                        <li>
+                            <a href="#">Genres<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <ul class="hidden">
+                                <li><a href="/pages/fiction.html">Fiction</a></li>
+                                <li><a href="/pages/nonfiction.html">Nonfiction</a></li>
+                                <li><a href="/pages/poetry.html">Poetry</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/pages/contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
             
-            <input type="submit" value="Send">
-        </form>
-        
-        <footer>
-            <a href="https://github.com/BYU-CS260-Winter-2018/lab-1-smithskyler">https://github.com/BYU-CS260-Winter-2018/lab-1-smithskyler</a>
-        </footer>
+            <div class="main" id="contactForm">
+                <h2>Contact</h2>
+                <form action="https://formspree.io/smithskylera@gmail.com" method="POST">
+                    <p>Name</p>
+                    <input type="text" name="name">
+                    <p>Email</p>
+                    <input type="email" name="_replyto">
+                    <p>Message</p>
+                    <textarea type="text" name="content"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+            
+            <footer>
+                <a href="https://github.com/smithskyler/cs260livingtwice.git">https://github.com/smithskyler/cs260livingtwice.git</a>
+            </footer>
+        </div>
     </body>
 </html>

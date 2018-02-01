@@ -1,95 +1,67 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
-@import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 
 body {
     background-color: whitesmoke;
-    margin: 50px;
-    border: 2px solid lightgray;
+    margin: 30px 50px;
 }
 
-.hugRight {
-    float: right;
+@media screen and (max-width: 800px) {
+    body {
+        margin: 30px 10px 30px 10px;
+    }
 }
 
-h1 {
-    margin-top: 1em;
-    text-align: center;
-    font-size: 2.5em;
-    font-family: 'Courgette', cursive;
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    grid-gap: 50px;
 }
 
-h2 {
-    margin-top: 2em;
-    font-family: 'Courgette', cursive;
+/* ---------- Header Area and Main Nav ---------- */
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "title navigation";
+    grid-gap: 20px;
 }
 
-p {
-    font-family: 'Dosis', sans-serif;
+.header h1 {
+    grid-area: title;
+    min-width: 175px;
+    font-family: 'Slabo 27px', serif;
 }
 
-.center {
-    width: 50%;
-    display: inline-block;
-    padding-left: 10px;
-    margin-bottom: 2em;
-    margin-left: 25%;
-}
-
-section {
-    display: flex;
-}
-
-aside {
-    flex: 1;
-}
-
-.leftContent {
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 1em;
-    width: 90%;
-    margin: auto;
-}
-
-.leftContent img {
-    width: 95%;
-}
-
-article {
-    flex: 2;
-}
-
-
-.frontCenter {
-    margin: auto;
-}
-
-.centerImage {
+.navigation {
+    grid-area: navigation;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-}
-
-.navbar {
     width: 100%;
-    text-align: center;
+/*    text-align: center;*/
 }
 
 nav ul {
-    display: inline-block;
+    display: block;
     list-style-type: none;
+    padding-top: 20px;
+    float: right;
 }
 
 nav li {
     float: left;
-    font-family: "Palatino", "Times New Roman", "Times", serif;
+    font-family: 'Dosis', sans-serif;
     font-size: 17;
 }
 
 nav li a {
     font-weight: bolder;
-    padding: 8px 10px;
+    padding: 8px 20px;
     text-decoration: none;
     color: gray;
 }
@@ -102,28 +74,94 @@ nav .active {
     color: #505F8F;
 }
 
+@media screen and (max-width: 635px) {
+    /*Create vertical spacing*/
+    .header li {
+        margin-bottom: 5px;
+    }
+    /*Make all menu links full width*/
+    .navigation ul li, li a {
+        width: 100%;
+    }
+}
+
+/*Hide dropdown links until they are needed*/
+.navigation li ul {
+    display: none;
+}
+
+.navigation li ul {
+    padding: 0px;
+}
+/*Make dropdown links vertical*/
+.navigation li ul li {
+    display: block;
+    float: none;
+    
+    padding: 2px 0px 0px 5px;
+    
+}
+/*Display the dropdown on hover*/
+.navigation ul li a:hover + .hidden, .hidden:hover {
+    display: block;
+    position: absolute;
+    background-color: aliceblue;
+}
+
+/* ---------- Main Area ---------- */
+
+.main {
+    grid-area: main;
+    column-count: 2;
+    column-rule: solid lightgray 1px;
+}
+
+@media screen and (max-width : 800px){
+    .main {
+        column-count: 1;
+    }
+}
+
+.main h2 {
+    font-family: 'Dosis', sans-serif;
+    margin-bottom: 10px;
+}
+
+.main h3 {
+    font-style: italic;
+    font-weight: 100;
+    margin: 0px 0px 0px 10px;
+}
+
+.main p {
+    font-family: 'Lato', sans-serif;
+    line-height: 25px;
+}
+
+.main p img {
+    width: 100%;
+}
+
+.attribution {
+    font-size: 14px;
+    color: gray;
+}
+
+/* ---------- Footer Area ---------- */
 footer {
-    margin: 0 1em 0.5em 1em;
-    font-family: "Futura", sans-serif;
-    font-size: 0.75em;
+    border-top: solid lightgray 1px;
+    grid-area: footer;
+    padding-top: 10px;
 }
 
 footer a {
+    text-decoration: none;
     color: #505F8F;
 }
 
-.photoPortfolio {
-    display: grid;
-    grid-template: auto auto auto / 1fr 1fr 1fr;    
-}
-
-.photoPortfolio img {
-    width: 85%;
-    margin: auto;
-}
-
-.review {
-    border-left: 2px solid gray;
+/* ---------- Contact Page ---------- */
+#contactForm {
+    column-count: 1;
 }
 
 input {
@@ -134,6 +172,7 @@ input {
     border: 2px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
+    font-family: 'Lato', sans-serif;
     font-size: 20;
 }
 
@@ -151,7 +190,6 @@ textarea {
     border-radius: 4px;
     background-color: #f8f8f8;
     resize: vertical;
+    font-family: 'Lato', sans-serif;
     font-size: 15;
 }
-
-.
