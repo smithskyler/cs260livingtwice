@@ -162,6 +162,13 @@ footer a {
 /* ---------- Contact Page ---------- */
 #contactForm {
     column-count: 1;
+    width: 65%;
+}
+
+@media screen and (max-width: 800px) {
+    #contactForm {
+        width: 100%;
+    }
 }
 
 input {
